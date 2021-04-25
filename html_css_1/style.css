@@ -1,0 +1,25 @@
+
+* {
+        color: rgb(255, 253, 105) ;
+}
+    
+/* truy cập đến tất cả thẻ h3 */
+h3 {
+    color: rgb(48, 98, 192);
+    font-size: 50px;
+}
+
+/* truy cập vào thẻ có id
+    sử dụng dấu # */
+#the_2 {
+    color: green;
+    font-size: 20px;
+}
+
+/* truy cập vào các phần tử chung 1 class */
+.hihi {
+    color: hotpink;
+    font-size: 40px;
+}
+
+

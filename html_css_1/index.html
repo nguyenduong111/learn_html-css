@@ -1,0 +1,198 @@
+<!-- cấu trúc cơ bản của file.html
+     các thẻ html, head, body, meta, link, h, p, a, img, ul, table, input, button, div, style, 
+     attribute
+     css selection
+     mức độ ưu tiên 
+    -->
+
+<!doctype html>
+<!--định nghĩa loại tài liệu-->
+
+<html lang="en">
+<!--tất cả các thẻ khác sẽ nằm trong thẻ html
+    một webside chỉ có 1 thẻ html-->
+  <head>
+  <!--phần đầu-->
+    <title>Title</title>
+    <!--thẻ tiêu đề : hiểu thị trên thanh trình duyêt-->
+
+    <meta charset="utf-8">
+    <!--hỗ trợ sử dụng tiếng việt-->
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+  <!--thẻ thân-->
+    nguyễn thái dương
+
+
+    <h1> thẻ tiêu đề </h1>
+    <!-- thẻ h (heading) là thẻ tiêu đề, có từ h1 đến h6
+        -->
+
+
+
+    <p> thẻ viết đoạn văn </p>
+    <!-- thẻ p (paragraph) để viết 1 đoạn văn -->
+
+
+
+  
+    <img src="https://hpconnect.vn/wp-content/uploads/2019/09/dich-vu-ghep-anh-chuyen-nghiep-hpconnect-2.jpg" alt="lỗi">
+     <!-- thẻ ảnh
+          src=""  địa chỉ ảnh, nguồn ảnh
+          alt=""  (ko nhất thiết phải có) hiển thị khi ảnh bị lỗi -->
+
+
+
+
+    <a href="https://www.facebook.com/profile.php?id=100005604707224">trang cá nhân</a>
+    <!-- thẻ a (anchor: mỏ neo) 
+        thêm liên kết, đường link href-->
+
+
+
+
+    <ul>
+    <!-- thẻ ul: unordered list
+      tạo một danh sách (có thể chuyển thành thẻ ol)-->
+      <li>dương</li>
+      <!-- thẻ li: list item
+        tạo từng phần tử trong list -->
+      <li>nhung</li>
+      <li>kuki</li>
+    </ul>
+
+
+
+
+    <table>
+      <!-- kẻ ra một bảng -->
+      <thead>
+      <!-- phần đầu bảng -->
+            <th> stt </th>
+            <!-- thẻ th: đề mục của bảng-->
+            <th> tên </th>
+            <th> năm sinh </th>
+      </thead>
+      <tbody>
+      <!-- phần thân bảng -->
+            <tr>
+            <!-- table road: các giá trị trên 1 dòng -->
+                <td> 1 </td>
+                <td> duong </td>
+                <td> 2001 </td>
+            </tr>
+            <tr>
+                <td> 2 </td>
+                <td> nhung </td>
+                <td> 2000 </td>
+            </tr>
+      </tbody>
+    </table>
+  
+    
+    <input type="text">
+    <!-- tạo ra một vùng để nhập dữ liệu -->
+
+    <input type="checkbox" name="" id="">
+    <input type="checkbox" name="" id="">
+    <input type="checkbox" name="" id="">
+    <!-- tạo ra 1 ô vuông để tích vào -->
+
+    <input type="radio" name="" id="">
+    <input type="radio" name="" id="">
+    <input type="radio" name="" id="">
+    <!-- tạo ra 1 ô tròn để tích vào (nếu các thẻ radio trùng name sẽ chỉ chọn đc 1 thẻ) -->
+
+
+
+    <button>đăng kí</button>
+    <!--  tạo ra một nút bấm -->
+
+
+    <div>
+      <a href="">
+
+      </a>
+      <img src="" alt="">
+
+    </div>
+<!-- thẻ div để tạo 1 khối bao quanh, tất cả các thẻ trong đó đều thuộc 1 div -->
+
+
+
+    <style>
+    /* thẻ style để viết css trong file htnl*/
+
+      h2 {
+        color: brown;
+        font-size: 50px;
+      }
+    </style>
+    <h2>nam định</h2>
+
+    <h3>hải hậu</h3>
+    <h3>xóm 16</h3>
+
+    <h4 style="color: cadetblue; font-size: 20px;">hải phú</h4>
+
+
+  <!-- attribute 
+    + là thuộc tính đc thêm vào các thẻ
+    + được thêm ở thẻ mở
+    + vd: title="", style="", onclick="",....
+  -->
+
+
+  <!-- 3 cách sử dụng css trong html 
+    c1: internal: 
+        viết thẳng css vào trong file html trong thẻ <style></style>
+
+    c2: external: viết css vào 1 file.css khác sau đó link file.css với file.html
+        thông thường sẽ đặt tên là style.css
+
+    c3: inline: sử dụng attribute style="" trong các thẻ mở
+-->
+
+
+<!-- css selectors 
+  c1: sử dụng attribute id=""
+  (id để định danh nên nó là giá trị duy nhất)
+
+  c2: sử dụng attribute class="" khi muốn sử dụng thuốc tính css cho nhiều phần tử khác nhau 
+-->
+
+  <h2 id="the_2"> thẻ số 2</h2>
+  
+
+  <h1 class="hihi"> một </h1>
+  <h2 class="hihi"> hai </h2>
+  <h3 class="hihi"> ba </h3>
+
+
+  <!-- mức độ ưu tiên trong css
+  + với internal và external:
+    ngang nhau, cái nào đc gọi sau thì đc dùng
+  
+  + mức độ ưu tiên:  inline > #id > .class > tag 
+
+  độ ưu tiên cao hơn thì có thể ghi đè thấp hơn, trong devtool những thuộc tính bị ghi 
+    đè vẫn hiện lên nhưng bị gạch
+  có thể gọi 1 lúc nhiều thuộc tính vd: thẻ h1 có cả id và class, khi gọi #id.class sẽ đc ưu tiên hơn #id và .class
+
+  + equal specificity: khi gọi lặp lại 1 thuộc tính, lần gọi cuối sẽ đc thực hiện
+  
+  + universal selector and inherited: sử dụng chung cho toàn bộ file html (mức độ ưu tiên thấp nhất, nghĩa là toàn bộ các
+     cách truy cập thuộc tính khác đều có thể ghi đè)
+    cách sử dụng, viết bên file.css
+    * {
+      color: red;
+      font-size: 20px;
+    }
+  
+  + ĐẶC BIỆT THUỘC TÍNH NÀO ĐC THÊM !important sẽ đc ưu tiên cao nhất
+-->
+  </body>
+</html>
