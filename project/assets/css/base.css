@@ -1,0 +1,166 @@
+/* các thành phần chung */
+
+:root {  /*các biến toàn cục*/
+    --primary-color: rgb(238, 75, 43);
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+
+    --navbar-height: 34px;
+    --header-height: 120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+* { /*áp dụng cho tất cả các file.html (nhưng độ uu tiên thấp nhất)*/
+    box-sizing: inherit;
+    /* kế thừa các thuộc tính của box-sizing */
+}
+
+html {
+    /* font-size: 100%;  */
+    /*thông thường là 16px*/
+    font-size: 62.5%;  /*đặt 62.5% để dễ dành lấy đơn vị rem hơn (16px = 1.6rem, 14px = 1.4rem)*/
+    line-height: 1.6rem; /* khoảng cách giữa các dòng*/
+    font-family: 'Roboto', sans-serif;  /*do font đc nhung trực tiếp vào html nên có thể sẽ mất thời gian tải nên trong trường hợp chưa kịp tải roboto thì sẽ dùng font sans-serif*/
+    box-sizing: border-box;
+}
+
+/* Responsive------------------------------- */
+
+/* các class hỗ trợ viết tương thích kiểu */
+.grid {
+    width: 1500px;
+    max-width: 100%;
+    /*  với màn >= 1200px thì đẩy xuống 1200px
+        với màn < 1200px thì xét 100% giao diện hiên tại */
+    margin: 0 auto;
+}
+
+.grid__full-width {  /*khi ko muốn dùng class grid*/
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap; /*tự động xuống dòng*/ 
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+/*  mặc định khoảng cách giữa các column trên pc là 24px = 12px + 12px */
+
+/* test */
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+}
+
+.grid__column-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3334%;
+}
+
+/* 3 cấp 
+.grid {
+    .row {
+        .column {
+
+        }
+    }
+}
+*/
+
+/* animation */
+@keyframes fadeIn {    /*@keyframes tạo ra các animation chuyển động dạng frames (nhiều tấm ảnh chuyển động)*/
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+/* lớp phủ mờ toàn màn hình */
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    animation: fadeIn linear 0.2s;
+}
+
+.modal__body {
+    --growth-from: 0.5;
+    --growth-to: 1;
+    margin: auto;
+    z-index: 1;
+    /* z-index là thuộc tính sắp xếp các layout theo chiều hiển thị
+        tg nào có z-index cao hơn thì đc ưu tiên hiển thị (gần với mắt ng xem nhất)
+        mặc định z-index bằng nhau = 0 (ngang cấp)
+    */
+    animation: growth linear 0.15s;
+}
+
+/* button style */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary { /*selec vào class có cả 2 tên*/
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+/* khi nút bị vô hiệu hóa */
+.btn.btn--disabled {
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+
