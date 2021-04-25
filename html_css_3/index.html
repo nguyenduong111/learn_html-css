@@ -1,0 +1,85 @@
+
+<!--các thuộc tính của background
+    các hàm trong css
+    lớp giả
+    phần tử giả
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        
+        .header {
+            width: 100%;
+            height: 100vh;
+            background-color: #333;
+            background-image: url(https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg);
+            /* background-image: url(<link ảnh>)
+                lấy ảnh làm background
+                + có thể lấy nhiều ảnh làm background, url() nào ở trên thì sẽ đc hiện bên trên, các url() cách nhau bằng dấu phẩy
+            */
+
+            /* nếu background là color ta có background-clip để điều chỉnh vùng bắt đầu đổ màu (border, padding, content)
+               nếu background là image ta có background-origin có tác dụng tương tự 
+            */ 
+
+            background-size: 100%;
+            /* đặt kích thước của background
+                nếu baclground là 1 img ở chế độ mặc định, sẽ tự động repeat lại tấm ảnh để che kín background
+                + background-size: keyword;
+                    - cover; luôn điều chỉnh ảnh để lấp đầy giao diện nhìn (có thể cắt mất 1 phần ảnh)
+                    - contain; lấy chiều dài hơn để điều chỉnh (ko cắt mất ảnh)
+            */
+            background-repeat: no-repeat;
+            /* background-repeat điều chỉnh chế độ lặp lại của img background 
+                *ứng dụng của repeat: khi muốn background lớn có ảnh lặp lại, chỉ cần 1 ảnh mẫu nhở repeat sẽ lấp đầy background
+            */
+        }
+
+        /* background-image: linear-gradient(<hướng xoay> deg, <màu bắt đầu>, <màu kết thúc>)
+            tạo 1 background có ảnh màu chuyển
+
+        + màu rgba(<red>, <green>, <blue>, <alpha: độ trong suốt (chạy từ 0 -> 1)>)
+        */
+
+        /* background-position: <top, right, left, bottom, center, 10px, 10%>
+            có thể dùng kết hợp lại vs nhau
+            + điều chỉnh vị trí của bacjkground-image 
+        */
+
+        /* cách viết ngắn của background (color image(url()) repeat position / size ) */
+        
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="header" > </div>
+
+    <a href="https://drive.google.com/drive/folders"> vd về attr() </a>
+
+    <h1>test hover</h1>
+
+    <h2>test active</h2>
+
+    <ul>
+        <li>mot</li>
+        <li>hai</li>
+        <li>ba</li>
+        <li>bon</li>
+    </ul>
+
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

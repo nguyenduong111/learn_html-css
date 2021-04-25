@@ -1,0 +1,41 @@
+
+/* đặt biến trong css: css variable
+    + bắt buộc phải có 2 dấu -- trước tên biến
+    + đặt trong :root sẽ là biến toàn cục dùng cho toàn bộ file.html và file.css
+    + khi tên màu sai, lỗi sẽ trở về màu mặc định là đen
+*/
+:root {
+    --text-color: red;   /*toàn cục*/
+}
+
+h1 {
+    color: var(--text-color);
+    background-color: black;
+    font-size: 10px;
+}
+
+h2 {
+    --my-color: green;   /*cục bộ dùng trong h2*/
+    color: var(--my-color);
+    font-size: 4rem;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* đơn vị trong css
++ absolute units: là các đơn vị độc lập
+    vd: px, pt, cm, mm, inch, pc
+    * px điểm ảnh: với màn hình độ phân giải thấp, 1 px css thì = 1 điểm ảnh, 
+        với màn độ phân giải cao, 1px css > 1 điểm ảnh
+
++ relative units: là các đơn vị phụ thuộc vào 1 yếu tố gì đó
+    vd: %, rem, em, vw, vh, ...
+    * % phụ thuộc vào size của thẻ chứa nó            (100% <=> 16px)
+    * rem phụ thuộc vào fint-size trong thẻ html      (thường dùng)
+    * em phụ thuộc vào thẻ gần nó nhất chứa font-size ()
+    * vw, vh phụ thuộc vào độ rộng của trình duyệt
+        vd: 1vw là 1% độ ngang của trình duyệt
+            100vh là 100% chiều dọc của trình duyệt 
+*/

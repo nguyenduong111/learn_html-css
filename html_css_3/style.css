@@ -1,0 +1,88 @@
+
+/* css function 
++ var(): biến
++ linear-gradient(): tạo màu chuyển
++ rgba()
++ rgb()
++calc(): hàm toán học (+ - * /) các đơn vị trong css
++ attr() hàm lấy giá trị các attribute trong các thẻ htmla
+*/
+a::after {
+     content: attr(href) ;
+}
+
+/* lấy nội dung attribute href trong thẻ a rồi gán vào cuối text của thẻ a */
+
+/* css pseudo-classes: lớp giả 
+    + lớp giả có dấu : ở đầu rồi đến tên lớp giả
+    + :root lớp giả bao chùm lên toàn bộ file.html
+    + :hover các thuộc tính css sẽ có tác dụng chỉ khi di chuột đến phần tử đó
+    + :active các thuộc tính css sẽ có tác dụng khi bấm giữ chuột lên
+    + :first-child, :last-child truy cập đến phần tử đầu tiên và cuối cùng trong 1 tập hợp phần tử
+*/
+
+h1:hover {
+    color: red;
+}
+
+h2:active {
+    color: rgb(94, 173, 57);
+}
+
+li:first-child {
+    color: red;
+}
+
+li:last-child {
+    color: rgb(42, 184, 209);
+}
+
+/* css pseudo-elements: phần tử giả
+    * đặc điểm: luôn có dấu :: trước tên pseudo-elements
+    luôn có thuộc tính content: ""; để giúp pseudo-elements có thể tồn tại đc
+    + ::before luôn đc đứng đầu trong thẻ chứa nó
+    + ::after luôn đứng cuối trong thẻ chứa nó 
+    + ::first-letter kí tự đầu tiên trong text
+    + ::first-line dòng đầu tiên
+    + ::selection chỉ có tác dụng khi bôi đen đối tượng
+      
+*/
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
+
+.box1 {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(97, 201, 97);
+
+}
+
+.box2 {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(97, 201, 97);
+
+}
+
+
+.box::before {
+    content: "before";
+    display: block;
+    background-color: cornsilk;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.box::after {
+    content: "after";
+    display: block;
+    background-color: darkkhaki; 
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+}

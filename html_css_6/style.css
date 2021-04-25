@@ -1,0 +1,82 @@
+/* 
+       BEM: là tiêu chuẩn đặt tên class trong css
+
+       + viết tắt cuả:
+            - block: khối
+            - element: thành phần trong khối
+            - modifier: bổ sung nghĩa cho block hoặc element
+
+        + thống nhất 1 cách đặt tên
+
+        + cú pháp:
+        - .block
+        - .block__element
+
+        - .block--modifier
+        - .block__element--modifier
+*/
+
+body > div {  /*dấu > để chọn con trực tiếp (trong trường hợp này nghĩa là chọn vào thẻ div là con trực tiếp của thẻ body)*/
+    margin: auto;
+}
+
+/* block */
+/* do thẻ div có bản chất là block nên mỗi thẻ div sẽ nằm trên 1 dòng */
+.btn {
+    display: inline-block;  /*làm cho các block nằm trên cùng 1 dòng*/
+}
+
+/* thẻ a sẽ luôn có dấu gạch chân dưới, để bỏ đi ta chuyển text-decoration: none */
+.btn--a {
+    text-decoration: none;
+}
+
+/* thẻ button sẽ luôn có phần border đc viền, outline và background-color sẵn */
+.btn--btn {
+    border: none;
+    background-color: transparent; /*trong suốt*/
+    outline: none;
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 50px; /*uốn cong viền của nút*/
+    min-width: 120px;     /**giới hạn chiều ngang ko ngắn quá/
+    /* margin-right: 50px;  */
+     /*margin-right để các nút các xa nhau  */
+    cursor: pointer;  /*chuyển kiểu con trỏ khi di vào nút*/
+    transition: opacity 0.2s ease;  /*tạo ra độ trễ cho hiệu ứng opacity trong hover*/
+}
+
+.btn--btn:hover {
+    opacity: 0.8;  /*độ mờ đục*/
+}
+
+
+/* các nút chung class đứng cạnh nhau bị ảnh hưởng */
+.btn--btn + .btn--btn {
+    margin-left: 16px;
+}
+
+.btn--success {
+    background-color: #71be34;
+}
+
+.btn--warn {
+    background-color: #ffb702;
+}
+
+.btn--danger {
+    background-color: #ff623d;
+}
+
+.btn--disabled {
+    opacity: 0.5 !important;  /* để mất hiệu ứng hover*/
+    cursor: default !important;   /*để chuyển con trỏ về trạng thái bình thường*/          
+}
+
+/*  + không nên đặt chiều ngang cho nút
+    + có thể xét min-width để khi chữ ngắn quá thì background ko quá ngắn
+    + 2 trạng thái cơ bản của 1 nút
+     - Enabled: bấm đc : pointer, hover effect
+     - disabled: ko bấm đc: thêm hiệu ứng mờ hơn (ưu tiên nhất) để ng dùng biết là ko bấm đc vào
+    + có thể có nhiều cỡ nút, size-l, size-m, size-s (sửa padding tăng lên) 
+*/

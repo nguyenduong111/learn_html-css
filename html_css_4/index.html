@@ -1,0 +1,85 @@
+
+<!-- css position -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <style>
+
+        .header {
+            width: 100%;
+            height: 42px;
+            background-color: rgb(0, 0, 0);
+            position: fixed;
+            top: 0;
+        }
+
+
+        .box {
+            width: 100%;
+            height: 300px;
+            background-color: #333;
+            position: relative;   /*làm gốc tọa độ cho thẻ box1*/
+            border: 16px dashed rgb(76, 150, 92);
+            box-sizing: border-box;
+        }
+
+        .box1 {
+            width: 50px;
+            height: 50px;
+            position: absolute;      /*vị trí sẽ phụ thuộc vào cha có thuộc tính position gần nhất, là class="box"*/
+            background-color: #fff;
+            bottom: 0;
+            right: 0;
+            /* nếu muốn box1 phủ toàn bộ box, thì ta đăt thuộc tính positive: absolute
+                ko khai báo width, height
+                top, rightm left, bottom = 0
+            */
+        }
+
+
+        h1 {
+            position: relative; /*gốc tọa độ tại chính vị trí hiện tại của elem*/
+            color: rgb(216, 23, 23);
+            top: 100px;
+            right: 50px;
+            bottom: 25px;
+            left: 100px;
+        }
+
+
+
+        ul {
+            height: 2000px;  /*để trình duyệt dài ra để kéo đc thôi*/
+        }
+
+    </style>
+
+    <body>
+
+        <div class="header" ></div>
+
+        <div class="box">
+            <div class="box1"></div>
+        </div>
+
+        <h1>Relative</h1>
+
+        <ul>
+
+        </ul>
+
+    </body>
+</html>
+
+<!-- css position: thiết lập các vị trí cho các elem 
+   + relative: (tương đối), lấy chính vị trí elem làm gốc tọa độ
+   + Absolute: (tuyệt đối), phụ thuộc vào thẻ cha gần nhất có thuộc tính position làm gốc tọa độ
+   + Fixed: (phụ thuộc vào khung trình duyệt, ko phụ thuộc vào các elem)
+   + Sticky: (phụ thuộc vào khung trình duyệt, ít trình duyệt hỗ trợ) tác dụng gần giống như fixed 
+-->

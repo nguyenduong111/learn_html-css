@@ -1,0 +1,91 @@
+
+<!--sơ đồ dạng khối và các thao tác: padding, border, margin
+    đặt tên biến css
+    đơn vị đo trong css
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .box {
+            width: 60px;
+            height: 60px;
+            color: #fff;
+            margin: 10px;
+            float: left;     /*đẩy các đối tượng ảnh hưởng về bên trái*/
+        }
+
+        .box1 {
+            background-color: #333;
+            padding: 20px;
+            border: 10px dashed rgb(14, 64, 230);
+            box-sizing: border-box;
+            /* box-sizing: border-box; tổng kích thước( padding + border + content) sẽ luôn bằng kích thước khai báo */
+            
+            background-clip: border-box;
+            /* màu background sẽ đc đổ từ border vào */
+            background-clip: padding-box;
+            /* màu của background sẽ đc đổ từ padding vào */
+            background-clip: content-box;
+            /* màu của background sẽ chỉ đc đổ ở content */
+        }
+
+        .box2 {
+            background-color: orange;
+            /* border: bao quanh ngoài đối tượng
+               border: <độ dầy viền> <kiểu viền> <màu sắc>;
+            */
+            border: 10px rgb(100, 175, 81);
+            border-style: solid;
+            border: 10px solid rgb(100, 175, 81);
+
+        }
+
+        .box3 {
+            background-color: orangered;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            /* phần padding có 4 hướng top, right, left, bottom */
+            /* có thể viết tắt như sau
+            padding: <giá trị>;   tăng đều 4 hướng
+            padding: <giá trị 1> <giá trị 2>;  giá trị 1 cho top và bottom, giá trị 2 cho right và left
+            padding: <giá trị 1> <giá trị 2> <giá trị 3>; giá trị 1 cho top, giá trị 2 cho right và left, giá trị 3 cho bottom
+            padding: <giá trị 1> <giá trị 2> <giá trị 3> <giá trị 4>; lần lượt top - right - bottom - left
+            */
+            padding: 10px 10px 10px 10px;
+            
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <h1> hi, nguyen duong </h1>
+
+    <h2> how are you today </h2>
+
+
+    <div class="box box1"> box 1 </div>
+    <div class="box box2"> box 2 </div>
+    <div class="box box3"> box 3 </div>
+
+    <!-- xem thông số ở inspect -> computed sơ đồ dạng khối
+        chia làm 4 phần 
+            + trong cùng là phần nội dung
+            + padding: lớp đệm là 1 phần của đối tượng (tăng kích thước đối tượng)
+            + border: là lớp viền bao quanh đối tượng (tăng kích thước đối tượng)
+            + margin: tạo khoảng cách (ko làm thay đổi kích thước đối tượng)
+    -->
+
+</body>
+</html>
