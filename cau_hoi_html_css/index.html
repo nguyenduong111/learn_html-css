@@ -1,0 +1,231 @@
+<!-- trả lơi câu hỏi html/css tuần 1, 2 
+    Câu 1: BEM là gì? Tại sao lại cần đến BEM ?
+    Câu 2: Phân biệt các giá trị inline, block và inline-block trong thuộc tính của 
+display 
+    Câu 3: Margin và padding khác nhau thế nào?
+    Câu 4: Giải thích các giá trị của thuộc tính position: Fixed, Absolute, Relative, Static
+    Câu 5: Điểm khác nhau giữa CSS và CSS3?
+    Câu 6: Thuộc tính “opacity” được dùng làm gì?
+    Câu 7: Điểm khác biệt giữa “width: auto” và “width: 100%” trong CSS?
+    Câu 8: Thẻ “div” và thẻ “span” khác nhau thế nào?
+    Câu 9: Mô tả ngắn gọn cách sử dụng chính xác các phần tử ngữ nghĩa HTML5 sau: <header>, <article>, <section>, <footer>
+    Câu 10: Sự khác biệt giữa "attribute" (thuộc tính) và "property" (đặc tính) trong HTML?
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>answer</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    
+    <div class="number">
+        <div class="number__1--ans">
+            <h2>Câu 1: BEM là gì? Tại sao lại cần đến BEM ?</h2>
+            <b>BEM là viết tắt của Block-Element-Modifier</b>
+            <ul>
+                <li>Block: Khối là thành phần của trang web, thường là các khối tổng quát bao bọc bên ngoài (như header, body, footer, ...)</li>
+                <li>Element: Là các thành phần trong block</li>
+                <li>Modifier: Bổ sung thêm ý nghĩa cho Block hoặc Element</li>
+            </ul>
+            <b>Quy ước đặt tên theo BEM</b>
+            <ul>
+                <li>block</li>
+                <li>block__element</li>
+                <li>block--modifier</li>
+                <li>block__element--modifier</li>
+            </ul>
+            <b>Ứng dụng của BEM</b>
+            <p>BEM là một quy chuẩn quy ước đặt tên class cho css. Giúp coder làm dự án, hay làm theo team dễ dàng 
+                đọc lại code, hiểu đc khái quát nội dụng code chứa trong class đó. Thống nhất cách đặt tên class giúp clear code hơn, giảm
+                thời gian nghĩ tên để đặt class, tránh đặt trùng tên các class với nhau.  
+            </p>
+            <p>Nhược điểm của BEM là do bắt buộc phải đặt theo quy tắc từ B__E--M nên sẽ có những class 
+                mang tên mặc dù dễ hiểu nhưng rất dài dòng.
+            </p>
+        </div>
+    
+        <div class="number__2--ans">
+            <h2>Câu 2: Phân biệt các giá trị inline, block và inline-block trong thuộc tính của display </h2>
+            <b>Thuộc tính display để thay đổi cách hiển thị của phần tử (ví dụ inline -> block, block -> inline, ...)</b>
+            <ul>
+                <li>
+                    <p>display:inline chuyển đổi các phần tử đang ở dạng khác về dạng inline, khi đó các phần tử sẽ 
+                        hiện thị trên cùng 1 dòng, đồng thời các thuộc tính width, height sẽ ko có tác dụng 
+                    </p>
+                    <p><b>Lưu ý</b> các phần tử hiện thị dạng inline (như thẻ span,...)
+                    </p>
+                    <div class="inline noinl">đang ở dạng block (có thể set width, height,...)</div>
+                    <div class="inline inl">chuyển về dạng inline</div>
+                    <div class="inline inl">chuyển về dạng inline</div>
+                </li>
+                <li>
+                    <p>display:block chuyển đổi các phần tử đang ở dạng khác về dạng block, khi đó các phần tử sẽ 
+                        hiện thị trên từng dòng, đồng thời các thuộc tính width, height sẽ ko có tác dụng 
+                    </p>
+                    <p><b>Lưu ý</b>: các phần tử trong thẻ p, thẻ div,... đều là dạng block</p>
+                    <span class="block nobl">ko áp dụng display:block</span>
+                    <span class="block nobl">ko áp dụng display:block</span>
+                    <span class="block bl">áp dụng display:block</span>
+                    <span class="block bl">áp dụng display:block</span>
+                </li>
+                <li>
+                    <p>display:inline-block phần tử vẫn mang dạng inline nhưng sử dụng đc các tính chất của block
+                    </p>
+                    <span>nguyen <span class="in-bl">thai</span> duong</span>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="number__3--ans">
+            <h2>Câu 3: Margin và padding khác nhau thế nào?</h2>
+            <ul>
+                <li>Padding
+                    <p>+ Phần padding có 4 hướng top, right, left, bottom </p>
+                    <p>+ Cách dùng</p> 
+                    <ul>
+                        <li>padding: (giá trị); tăng đều 4 hướng</li>
+                        <li>padding: (giá trị 1) (giá trị 2);  giá trị 1 cho top và bottom, giá trị 2 cho right và left</li>
+                        <li>padding: (giá trị 1) (giá trị 2) (giá trị 3); giá trị 1 cho top, giá trị 2 cho right và left, giá trị 3 cho bottom</li>
+                        <li>padding: (giá trị 1) (giá trị 2) (giá trị 3) (giá trị 4); lần lượt top - right - bottom - left</li>
+                    </ul> 
+                    <p><b>+ Lưu ý: padding là một phần của phần tử, vì thế khi thay đổi padding kích thước của phần tử cũng thay đổi</b></p>
+                </li>
+                <li>Margin
+                    <p>+ Thành phần 4 hướng và cách dùng giống padding</p>
+                    <p><b>+ Lưu ý: margin không là một phần của phần tử, vì thế khi thay đổi margin kích thước của phần tử không thay đổi, nhưng khoảng
+                        cách của phần tử này với các phần tử khác sẽ thay đổi.
+                    </b></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="number__4--ans">
+            <h2>Câu 4: Giải thích các giá trị của thuộc tính position: Fixed, Absolute, Relative, Static</h2>
+            <p>Thuộc tính position để di chuyển phần tử mà ko ảnh hưởng đến phần tử khác</p>
+            <ul>
+                <li>
+                    <p>position: static; giá trị mặc định</p>
+                </li>
+                <li>
+                    <p>position: relative; vị trí tương đối, lấy vị trí phần tử là gốc để di chuyển</p>
+                </li>
+                <li>
+                    <p>position: absolute; vị trí tuyệt đối, lấy vị trí của cha chứa thuộc tính relative gần nhất làm gốc tọa độ để di chuyển</p>
+                </li>
+                <li>
+                    <p>position: fixed; di chuyển phụ thuộc vào khung của trình duyệt đang hiển thị, ko liên quan đến các phần tử khác</p>
+                </li>
+            </ul>
+            <div class="relative"> relative 
+                <div class="absolute">absolute    
+                </div>
+            </div>
+            <div class="fixed">position:fixed</div>
+        </div>
+
+        <div class="number__5--ans">
+            <h2>Câu 5: Điểm khác nhau giữa CSS và CSS3?</h2>
+            <p>Một số tính năng đc bổ sung vào css3</p>
+            <ul>
+                <li>rgba():(red, green, blue, alpha) giống màu rgb nhưng thêm thành phần alpha điều chỉnh độ trong suốt</li>
+                <li>hsl() và hsla(): màu sắc(0 -> 359), độ bão hòa(0 -> 100%), độ sáng(0 -> 100%)</li>
+                <li>animation: chuyển động của thành phần</li>
+                <li>background-clip: xác định vùng background đc cắt theo vùng đc giới hạn (border-box, padding-box, content-box)</li>
+                <li>background gradient; tạo màu chuyển cho background <br>
+                    background-image: linear-gradient(red, yellow);
+                </li>
+                <li>border-radius tạo góc tròn cho border</li>
+                <li>flexbox: chỉnh các thành phần theo chiều ngang hoặc dọc</li>
+                <li>box-sizing: xác định lại kích thước phần tử</li>
+                <li>box-shadow: Đổ bóng cho thành phần.</li>
+                <li>column: chia nội dung dạng cột</li>
+                <li>@font-face: định dạng font chữ</li>
+                <li>@keyframes: Dùng để điều khiển diễn biến một hoạt động của thành phần, được dùng kèm với thuộc tính animation</li>
+                <li>text-justify: Tăng hoặc giảm khoảng cách giữa các từ và giữa các ký tự sao cho dàn đều thành phần.</li>
+                <li>text-shadow: Xác định đổ bóng cho text.</li>
+                <li>transform: Xác định một quá trình chuyển đổi khi có một hành động.</li>
+            </ul>
+        </div>
+
+        <div class="number__6--ans">
+            <h2>Câu 6: Thuộc tính “opacity” được dùng làm gì?</h2>
+            <p>Thuộc tính để điều chỉnh độ trong suốt (từ 1-> 0). Được ứng dụng nhiều để là hiệu ứng hover</p>
+            <button class="opacity">hover</button>
+        </div>
+
+        <div class="number__7--ans">
+            <h2>Câu 7: Điểm khác biệt giữa “width: auto” và “width: 100%” trong CSS?</h2>
+            <ul>
+                <li>width:auto
+                    <p>chiếm tối đa chiều ngang của phần tử chứa nó <b>không bao gồm phần padding và border nếu có</b></p>
+                </li>
+                <li>width:100%
+                    <p>tổng chiều rộng của phần tử sẽ là 100% khối chứa nó cộng với bất kỳ lề ngang, phần đệm và đường viền nào (trừ khi sử dụng box-sizing: border-box,
+                         khi đó chỉ các lề được thêm vào 100% để thay đổi cách tính tổng chiều rộng của nó).</p>
+                </li>    
+            </ul>
+            <div class="father"> father
+                <div class="father__child">child</div>
+            </div>
+            <div class="mom">mom
+                <div class="mom__child">child</div>
+            </div>
+        </div>
+
+        <div class="number__8--ans">
+            <h2> Câu 8: Thẻ “div” và thẻ “span” khác nhau thế nào?</h2>
+            <p>+ Thẻ div dùng để gôm thành các nhóm nhiều thẻ html. Div ở dạng block</p>
+            <p>+ Thẻ span để nhóm các thẻ inline, thẻ span cũng ở dạng inline</p>
+        </div>
+
+        <div class="number__9--ans">
+            <h2>Câu 9: Mô tả ngắn gọn cách sử dụng chính xác các phần tử ngữ nghĩa HTML5 sau:</h2>
+            <ul>
+                <li>Header
+                    <p>Thẻ header ở đầu trang web, thường chứa tiêu đề, logo,...</p>
+                </li>
+                <li>Footer 
+                    <p>Thẻ footer là chân trang web, thường chưa các thông tin liên hệ, tác giả,..</p>
+                </li>
+                <li>Article
+                    <p>Đại diện cho một thành phần độc lập trong tài liệu, trang, ứng dụng hoặc trang web, được thiết kế để có
+                         thể phân phối hoặc tái sử dụng một cách độc lập </p>
+                </li>
+                <li>Section
+                    <p>đại diện cho một phần độc lập chung của tài liệu, phần này không có phần tử ngữ nghĩa cụ thể hơn để đại diện cho nó.
+                         Các phần phải luôn có một tiêu đề, với rất ít trường hợp ngoại lệ.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="number__10--ans">
+            <h2>Câu 10: Sự khác biệt giữa "attribute" (thuộc tính) và "property" (đặc tính) trong HTML?</h2>
+            <b>Trong document của HTML chỉ có khái niệm attribute của phần tử và không có khái niệm property của phần tử.
+                Ngược lại DOM Object có cả attribute và property.
+            </b>
+            <ul>
+                <li>Attribute
+                    <p>+ là thuộc tính đc thêm vào các thẻ <br>
+                        + được thêm ở thẻ mở <br>
+                        + vd: title="", style="", onclick="", id="",.... <br>
+                        + vd: thêm vào thẻ img title="hihi", style="height=100px;"
+                    </p>
+                    <img src="https://cdn.tgdd.vn/Files/2020/10/02/1295427/googlepixel5wallpapers2_600x1267.png" alt="" title="hihi" style="height: 100px;">
+                </li>
+                <li>property
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
